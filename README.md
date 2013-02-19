@@ -5,18 +5,18 @@ Shell scripts to set up a Ubuntu server to test Drupal.
 
 Options to install:
 
--Apache
--Apache Tomcat
--Apache Solr
--PHP
--MySQL
--Drush
--Xdebug
--XHProf
--Upload Progress
--An Email Catcher
--Jenkins
--Memcached
+* Apache
+* Apache Tomcat
+* Apache Solr
+* PHP
+* MySQL
+* Drush
+* Xdebug
+* XHProf
+* Upload Progress
+* An Email Catcher
+* Jenkins
+* Memcached
 
 ## Install
 
@@ -26,7 +26,7 @@ Edit the config.ini file to choose your install options.
 
 The target install environment is Ubuntu 12.04 LTS, desktop or server edition.
 
-Install will likely work on Ubuntu 12.10 and other Debian-based Linux distributions.  
+Install will likely work on Ubuntu 12.10 and other Debian-based Linux distributions.
 
 Run:
 
@@ -39,8 +39,8 @@ Edit the config file at: `~/drupal-server/config.ini`
 Run:
 
     bash ~/drupal-server/install.sh
-	
-If you are installing on a VirtualBox, you will be asked on question mid-way through the install.  
+
+If you are installing on a VirtualBox, you will be asked on question mid-way through the install.
 Choose the capitol Y option "Y".
 
 ## Background
@@ -50,7 +50,7 @@ These scripts are an upgrade to my previous projects:
 https://github.com/seanbuscay/drupal-quickstart
 https://github.com/seanbuscay/qs
 
-Those projects were minor forks of the Drupal QuickStart project (http://drupal.org/project/quickstart) which I contributed to for a short time.  
+Those projects were minor forks of the Drupal QuickStart project (http://drupal.org/project/quickstart) which I contributed to for a short time.
 
 This latest set of scripts has been de-coupled from the Drupal QuickStart project.
 
