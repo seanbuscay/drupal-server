@@ -43,6 +43,11 @@ Run:
 If you are installing on a VirtualBox, you will be asked on question mid-way through the install.
 Choose the capitol Y option "Y".
 
+**Please note:** 
+
+These scripts do not manage security for you.  
+If your test server is not already in a secure environment, then you must secure the server yourself.
+
 ## Background
 
 These scripts are an upgrade to my previous projects:
