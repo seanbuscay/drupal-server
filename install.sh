@@ -15,7 +15,8 @@ sudo apt-get -yq update
 echo "**************************************************" | tee -a ${DLOGFILE}
 echo "**  Start Apt-Get Upgrade                        **" | tee -a ${DLOGFILE}
 echo "**************************************************" | tee -a ${DLOGFILE}
-sudo apt-get -yq upgrade
+## Don't upgrade
+## sudo apt-get -yq upgrade
 
 ## Add Dependencies Early
 echo "**************************************************" | tee -a ${DLOGFILE}
