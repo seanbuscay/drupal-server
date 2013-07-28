@@ -15,7 +15,7 @@ if [[ ${INSTALL_DRUSH} == true ]]; then
   echo "**************************************************" | tee -a ${DLOGFILE}
   
   # Install using apt-get
-  sudo apt-get install drush
+  sudo apt-get ${APTGET_VERBOSE} install drush
   sudo drush dl drush --destination='/usr/share'
   
   # Install drush
