@@ -13,12 +13,17 @@ if [[ ${INSTALL_DRUSH} == true ]]; then
   echo "**************************************************" | tee -a ${DLOGFILE}
   echo "**  Install drush                               **" | tee -a ${DLOGFILE}
   echo "**************************************************" | tee -a ${DLOGFILE}
+  
+  # Install using apt-get
+  sudo apt-get install drush
+  sudo drush dl drush --destination='/usr/share'
+  
   # Install drush
-  sudo pear upgrade --force Console_Getopt
-  sudo pear upgrade --force pear
-  sudo pear upgrade-all
-  sudo pear channel-discover pear.drush.org
-  sudo pear install drush/drush
+ # sudo pear upgrade --force Console_Getopt
+  #sudo pear upgrade --force pear
+  #sudo pear upgrade-all
+  #sudo pear channel-discover pear.drush.org
+  #sudo pear install drush/drush
 
   mkdir ${HOME}/.drush
 
