@@ -11,7 +11,7 @@ source "${DPATH}"/config.ini
 echo "**************************************************" | tee -a ${DLOGFILE}
 echo "**  Start Apt-Get Update                        **" | tee -a ${DLOGFILE}
 echo "**************************************************" | tee -a ${DLOGFILE}
-sudo apt-get -yq update
+##sudo apt-get -yq update
 echo "**************************************************" | tee -a ${DLOGFILE}
 echo "**  Start Apt-Get Upgrade                        **" | tee -a ${DLOGFILE}
 echo "**************************************************" | tee -a ${DLOGFILE}
