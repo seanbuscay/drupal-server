@@ -16,7 +16,7 @@ if [[ ${INSTALL_DRUSH} == true ]]; then
   
   # Install using apt-get
   sudo apt-get ${APTGET_VERBOSE} install drush
-  sudo drush dl drush --destination='/usr/share'
+  sudo drush dl drush -y --destination='/usr/share'
   
   # Install drush
  # sudo pear upgrade --force Console_Getopt
