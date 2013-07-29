@@ -25,8 +25,6 @@ if [[ ${INSTALL_DRUSH} == true ]]; then
   #sudo pear channel-discover pear.drush.org
   #sudo pear install drush/drush
 
-  mkdir ${HOME}/.drush
-
 fi
 
 #======================================| Email catcher
