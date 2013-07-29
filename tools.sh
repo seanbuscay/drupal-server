@@ -95,10 +95,9 @@ if [[ "${INSTALL_XHPROF}" == true ]]; then
 
   # configure php
   echo "
-  [xhprof]
-  extension=xhprof.so
-  xhprof.output_dir=\"${LOGS}/xhprof\"
-  " | sudo tee /etc/php5/conf.d/xhprof.ini > /dev/null
+[xhprof]
+extension=xhprof.so
+xhprof.output_dir=\"${LOGS}/xhprof\"" | sudo tee /etc/php5/conf.d/xhprof.ini > /dev/null
 
   # configure apache
   echo "Alias /xhprof ${LOGS}/xhprof/xhprof_html
