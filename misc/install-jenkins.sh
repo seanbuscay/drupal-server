@@ -30,8 +30,8 @@ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources
 
 # Install package
 
-sudo apt-get ${APTGET_VERBOSE} --fix-missing update
-sudo apt-get ${APTGET_VERBOSE} install jenkins
+sudo apt-get ${APTGET_VERBOSE} update
+sudo apt-get ${APTGET_VERBOSE} install jenkins --fix-missing
 
 # Fix any dependencies
 sudo apt-get -y install -f
