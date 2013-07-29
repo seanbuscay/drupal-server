@@ -26,14 +26,11 @@ cd ~
 # Get the package signer key
 
 wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-
-# Add an entry in your /etc/apt/sources.list
-
-sudo echo "deb http://pkg.jenkins-ci.org/debian binary/" | sudo tee -a /etc/apt/sources.list
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 # Install package
 
-sudo apt-get ${APTGET_VERBOSE} update
+sudo apt-get ${APTGET_VERBOSE} --fix-missing update
 sudo apt-get ${APTGET_VERBOSE} install jenkins
 
 # Fix any dependencies
