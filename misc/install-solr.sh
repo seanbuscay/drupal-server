@@ -58,15 +58,15 @@ echo "**************************************************" | tee -a ${DLOGFILE}
 echo "**  SOLR TOMCAT INSTALL COMPLETE                **" | tee -a ${DLOGFILE}
 echo "**************************************************" | tee -a ${DLOGFILE}
 
-echo "**************************************************" | tee -a ${DLOGFILE}
-echo "**  CONFIGURE search_api_solr                   **" | tee -a ${DLOGFILE}
-echo "**************************************************" | tee -a ${DLOGFILE}
+#echo "**************************************************" | tee -a ${DLOGFILE}
+#echo "**  CONFIGURE search_api_solr                   **" | tee -a ${DLOGFILE}
+#echo "**************************************************" | tee -a ${DLOGFILE}
 
-mkdir ~/solrconfig;
-cd ~/solrconfig
-wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
-wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
-sudo cp -v *.xml /etc/solr/conf
+#mkdir ~/solrconfig;
+#cd ~/solrconfig
+#wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
+#wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
+#sudo cp -v *.xml /etc/solr/conf
 
 
 echo "
