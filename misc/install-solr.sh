@@ -39,6 +39,19 @@ sudo cp -v *.xml /etc/solr/conf
 sudo rm -r /var/lib/tomcat6/logs
 sudo mkdir /var/lib/tomcat6/logs
 
+# Fix missing enviroment variables
+echo "
+CATALINA_HOME=/usr/share/tomcat6
+CATALINA_BASE=/var/lib/tomcat6
+" | sudo tee -a /etc/environment > /dev/null
+
+source /etc/environment
+
+# Fix lib symlink
+
+cd /var/lib/tomcat6
+sudo ln -s /usr/share/java lib
+
 echo "
 <tomcat-users>
   <role rolename='admin'/>
