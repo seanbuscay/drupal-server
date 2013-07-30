@@ -26,14 +26,27 @@ For details on using solr with Drupal, see here: http://drupal.org/project/apach
 
 cd ~
 sudo apt-get ${APTGET_VERBOSE} update
+sudo apt-get ${APTGET_VERBOSE} install sun-java6-jre sun-java6-plugin
+sudo apt-get ${APTGET_VERBOSE} install tomcat6 tomcat6-admin tomcat6-common tomcat6-user tomcat6-docs tomcat6-examples
+sudo apt-get ${APTGET_VERBOSE} install solr-common solr-tomcat
 
-sudo apt-get ${APTGET_VERBOSE} install solr-tomcat tomcat6-admin
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  SOLR TOMCAT INSTALL COMPLETE                **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
+
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  CONFIGURE search_api_solr                   **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
 
 mkdir ~/solrconfig;
 cd ~/solrconfig
 wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
 wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
 sudo cp -v *.xml /etc/solr/conf
+
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  FIX TOMCAT BUGS                             **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
 
 # Fix bug for tomcat log location.
 sudo rm -r /var/lib/tomcat6/logs
@@ -59,5 +72,9 @@ echo "
   <user username='${TOMCAT_USER}' password='${TOMCAT_PASS}' roles='admin,manager'/>
 </tomcat-users>" | sudo tee /etc/tomcat6/tomcat-users.xml > /dev/null
 
-service tomcat restart
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  RESTART TOMCAT                              **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
+
+sudo /etc/init.d/tomcat6 restart
 echo "$HELP"
