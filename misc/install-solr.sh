@@ -27,8 +27,15 @@ For details on using solr with Drupal, see here: http://drupal.org/project/apach
 cd ~
 sudo apt-get ${APTGET_VERBOSE} update
 
-sudo apt-get ${APTGET_VERBOSE} install tomcat6 tomcat6-admin tomcat6-common tomcat6-user tomcat6-docs tomcat6-examples
-sudo apt-get ${APTGET_VERBOSE} install solr-common solr-tomcat
+sudo apt-get install ${APTGET_VERBOSE} sun-java6-jre sun-java6-plugin
+
+sudo apt-get ${APTGET_VERBOSE} install solr-tomcat
+
+mkdir ~/solrconfig;
+cd ~/solrconfig
+wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
+wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
+sudo cp -v *.xml /etc/solr/conf
 
 echo "
 <tomcat-users>
@@ -37,5 +44,5 @@ echo "
   <user username='${TOMCAT_USER}' password='${TOMCAT_PASS}' roles='admin,manager'/>
 </tomcat-users>" | sudo tee /etc/tomcat6/tomcat-users.xml > /dev/null
 
-sudo /etc/init.d/tomcat6 restart
+service tomcat restart
 echo "$HELP"
