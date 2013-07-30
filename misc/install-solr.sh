@@ -26,7 +26,7 @@ For details on using solr with Drupal, see here: http://drupal.org/project/apach
 
 cd ~
 sudo apt-get ${APTGET_VERBOSE} update
-sudo apt-get ${APTGET_VERBOSE} install sun-java6-jre sun-java6-plugin
+sudo apt-get ${APTGET_VERBOSE} install openjdk-6-jre icedtea6-plugin
 sudo apt-get ${APTGET_VERBOSE} install tomcat6 tomcat6-admin tomcat6-common tomcat6-user tomcat6-docs tomcat6-examples
 sudo apt-get ${APTGET_VERBOSE} install solr-common solr-tomcat
 
