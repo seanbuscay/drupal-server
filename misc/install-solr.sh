@@ -27,22 +27,8 @@ For details on using solr with Drupal, see here: http://drupal.org/project/apach
 cd ~
 sudo apt-get ${APTGET_VERBOSE} update
 sudo apt-get ${APTGET_VERBOSE} install openjdk-6-jre icedtea6-plugin
-sudo apt-get ${APTGET_VERBOSE} install tomcat6 tomcat6-admin tomcat6-common tomcat6-user tomcat6-docs tomcat6-examples
-sudo apt-get ${APTGET_VERBOSE} install solr-common solr-tomcat
 
-echo "**************************************************" | tee -a ${DLOGFILE}
-echo "**  SOLR TOMCAT INSTALL COMPLETE                **" | tee -a ${DLOGFILE}
-echo "**************************************************" | tee -a ${DLOGFILE}
-
-echo "**************************************************" | tee -a ${DLOGFILE}
-echo "**  CONFIGURE search_api_solr                   **" | tee -a ${DLOGFILE}
-echo "**************************************************" | tee -a ${DLOGFILE}
-
-mkdir ~/solrconfig;
-cd ~/solrconfig
-wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
-wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
-sudo cp -v *.xml /etc/solr/conf
+sudo apt-get ${APTGET_VERBOSE} install tomcat6
 
 echo "**************************************************" | tee -a ${DLOGFILE}
 echo "**  FIX TOMCAT BUGS                             **" | tee -a ${DLOGFILE}
@@ -64,6 +50,24 @@ source /etc/environment
 
 cd /var/lib/tomcat6
 sudo ln -s /usr/share/java lib
+
+sudo apt-get ${APTGET_VERBOSE} install solr-common solr-tomcat
+sudo apt-get ${APTGET_VERBOSE} install tomcat6-admin tomcat6-common tomcat6-user tomcat6-docs tomcat6-examples
+
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  SOLR TOMCAT INSTALL COMPLETE                **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
+
+echo "**************************************************" | tee -a ${DLOGFILE}
+echo "**  CONFIGURE search_api_solr                   **" | tee -a ${DLOGFILE}
+echo "**************************************************" | tee -a ${DLOGFILE}
+
+mkdir ~/solrconfig;
+cd ~/solrconfig
+wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
+wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
+sudo cp -v *.xml /etc/solr/conf
+
 
 echo "
 <tomcat-users>
