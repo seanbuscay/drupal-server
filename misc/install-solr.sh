@@ -27,15 +27,17 @@ For details on using solr with Drupal, see here: http://drupal.org/project/apach
 cd ~
 sudo apt-get ${APTGET_VERBOSE} update
 
-sudo apt-get install ${APTGET_VERBOSE} sun-java6-jre sun-java6-plugin
-
-sudo apt-get ${APTGET_VERBOSE} install solr-tomcat
+sudo apt-get ${APTGET_VERBOSE} install solr-tomcat tomcat6-admin
 
 mkdir ~/solrconfig;
 cd ~/solrconfig
 wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/solrconfig.xml
 wget drupalcode.org/project/search_api_solr.git/blob_plain/HEAD:/solr-conf/1.4/schema.xml
 sudo cp -v *.xml /etc/solr/conf
+
+# Fix bug for tomcat log location.
+sudo rm -r /var/lib/tomcat6/logs
+sudo mkdir /var/lib/tomcat6/logs
 
 echo "
 <tomcat-users>
