@@ -54,6 +54,7 @@ If your test server is not already in a secure environment, then you must secure
 These scripts are an upgrade to my previous projects:
 
 https://github.com/seanbuscay/drupal-quickstart
+
 https://github.com/seanbuscay/qs
 
 Those projects were minor forks of the Drupal QuickStart project (http://drupal.org/project/quickstart) which I contributed to for a short time.
