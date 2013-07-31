@@ -17,6 +17,7 @@ Options to install:
 * An Email Catcher
 * Jenkins
 * Memcached
+* PHP_CodeSniffer and Drupal CodeSniffer Standard
 
 ## Install
 
