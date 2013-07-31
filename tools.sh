@@ -27,6 +27,33 @@ if [[ ${INSTALL_DRUSH} == true ]]; then
 
 fi
 
+
+#======================================| PHP_CodeSniffer
+if [[ ${INSTALL_PHP_CodeSniffer} == true ]]; then
+  echo "**************************************************" | tee -a ${DLOGFILE}
+  echo "**  Install PHP_CodeSniffer                               **" | tee -a ${DLOGFILE}
+  echo "**************************************************" | tee -a ${DLOGFILE}
+  
+
+# Clone PHP_CodeSniffer directly from the github repo.
+# You could also install via pear.
+
+git clone git@github.com:squizlabs/PHP_CodeSniffer.git
+
+# Clone the coder branch you want.
+# Currently 7.x-2.x has the latest for D7
+
+git clone --branch 7.x-2.x http://git.drupal.org/project/coder.git
+
+# Add the Drupal coding standard to PHPCS.
+# Symlink to the Drupal coding standard in the coder module from within
+# the PHPCS standards directory.
+
+cd ~/PHP_CodeSniffer/CodeSniffer/Standards/
+ln -s ~/coder/coder_sniffer/Drupal/ Drupal
+
+fi
+
 #======================================| Email catcher
 if [[ "${INSTALL_EMAIL_CATCHER}" == true ]]; then
   echo "**************************************************" | tee -a ${DLOGFILE}
